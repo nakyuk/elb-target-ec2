@@ -26,3 +26,11 @@ sudo bash ready.sh
    - Healthcheck: HTTP 8080 /
 
 3. Access ELB
+```
+# Check target information
+curl lb-xxxxxxxxxx.us-east-1.elb.amazonaws.com
+
+# Continue processing until the specified time
+# eq. 5 sec is bellow;
+curl lb-xxxxxxxxxx.us-east-1.elb.amazonaws.comtimeout/5/
+```

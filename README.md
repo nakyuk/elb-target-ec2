@@ -1,15 +1,28 @@
 # Test EC2 for ELB target 
 
-## Usgage
+## Usage
 
-Run Amazon Linux 2023 instace with following User Data;
+1. Run Amazon Linux 2023 instace with following User Data;
 ```
 #!/bin/bash
 sudo dnf -y upgrade --releasever=latest
 sudo dnf -y update
 sudo dnf -y install httpd
-wget https://github.com/yuknak-aws/apache/archive/refs/tags/v3.zip
-unzip v3.zip 
-cd apache-3/
+wget https://github.com/nakyuk/elb-target-ec2/archive/refs/heads/main.zip
+unzip elb-target-ec2-main.zip
+cd elb-target-ec2-main/
 sudo bash ready.sh
 ```
+
+2. Ready target or target group for ELB
+ -  ALB
+   - Traffic port: HTTP 80
+   - Healthcheck: HTTP 8080 /
+ -  NLB
+   - Traffic port: TCP 80
+   - Healthcheck: TCP 8080
+ -  CLB
+   - Traffic port: HTTP 80
+   - Healthcheck: HTTP 8080 /
+
+3. Access ELB

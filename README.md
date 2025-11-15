@@ -5,11 +5,12 @@
 1. Run Amazon Linux 2023 instace with following User Data;
 ```
 #!/bin/bash
+sleep 30
 sudo dnf -y upgrade --releasever=latest
 sudo dnf -y update
 sudo dnf -y install httpd
 wget https://github.com/nakyuk/elb-target-ec2/archive/refs/heads/main.zip
-unzip elb-target-ec2-main.zip
+unzip main.zip
 cd elb-target-ec2-main/
 sudo bash ready.sh
 ```
